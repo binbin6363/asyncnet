@@ -11,12 +11,14 @@
 
 #ifndef __NET_H__
 #define __NET_H__
+namespace net{
 
-int (*Spliter)(char *data, int size, int &start, int &end);
+
+int (*PacketSpliter)(char *data, int size, int &start, int &end);
 
 class Net {
 public:
-	Net();
+	Net(PacketSpliter spliter);
 	virtual ~Net();
 
 	/**
@@ -31,12 +33,16 @@ public:
 	 **/
 	int writePacket(int fd, const char *data, int length);
 
+private:
+	int readPacketLength(int fd);
 
 private:
-	Spliter packet_spliter;
-	int fd;
+	PacketSpliter packet_spliter;
+	//int fd;
+    int max_limit;
 };
 
 
+};
 #endif
 

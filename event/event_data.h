@@ -11,6 +11,8 @@
 
 #ifndef __EVENT_DATA_H__
 #define __EVENT_DATA_H__
+namespace net{
+
 
 class NetData;
 struct EventData {
@@ -27,5 +29,7 @@ struct EventData {
 
 };
 
+
+};
 #endif
 

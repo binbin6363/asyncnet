@@ -12,6 +12,8 @@
 #ifndef __NET_DATA_H__
 #define __NET_DATA_H__
 
+namespace net{
+
 struct NetData {
 
 	// 网络数据上的文件描述符
@@ -31,5 +33,6 @@ struct NetData {
 
 };
 
+};
 #endif
 
